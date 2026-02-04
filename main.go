@@ -23,7 +23,6 @@ func main() {
 		fmt.Println("Error loading todos:", err)
 		os.Exit(1)
 	}
-
 	// switch on os.args[1]
 	switch os.Args[1] {
 	case "add":
@@ -36,7 +35,7 @@ func main() {
 	}
 }
 
-// cmd add 
+// cmd add
 func cmdAdd(todos *todo.Todos, args []string) {
 	if len(args) == 0 {
 		fmt.Println("Provide a title for the todo item.")
@@ -67,7 +66,7 @@ func cmdList(todos *todo.Todos) {
 	fmt.Println("\nTodo List:")
 	fmt.Println(strings.Repeat("-", 40))
 
-	// iterate over todos list 
+	// iterate over todos list
 	for _, item := range items {
 		status := "[ ]"
 		if item.Completed {
@@ -78,7 +77,7 @@ func cmdList(todos *todo.Todos) {
 	fmt.Println()
 }
 
-//if you typed an unknown command print usage manual
+// if you typed an unknown command print usage manual
 func printUsage() {
 	fmt.Println(`Todo CLI - A simple task manager
 Usage:
